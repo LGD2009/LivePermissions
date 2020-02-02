@@ -1,0 +1,2 @@
+include ':app', ':livepermissions'
+rootProject.name='LivePermissions'
