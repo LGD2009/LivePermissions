@@ -1,6 +1,9 @@
 # LivePermissions
 基于LiveData的权限申请库
 
+详情可点击查看[基于Jetpack的LiveData动态权限申请](https://juejin.im/post/5e54ca08e51d4526cb161d2c)
+
+
 ## 使用方法 ##
 ### 1.添加依赖
 
