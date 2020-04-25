@@ -6,7 +6,7 @@ android {
 
 
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -34,5 +34,3 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
 
-//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
