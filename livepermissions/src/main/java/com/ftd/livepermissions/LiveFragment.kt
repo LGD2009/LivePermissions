@@ -14,7 +14,7 @@ import androidx.lifecycle.MutableLiveData
  */
 internal class LiveFragment : Fragment() {
 
-    lateinit var liveData :MutableLiveData<PermissionResult>
+    lateinit var liveData: MutableLiveData<PermissionResult>
 
     private val PERMISSIONS_REQUEST_CODE = 100
 
@@ -26,7 +26,17 @@ internal class LiveFragment : Fragment() {
     @TargetApi(Build.VERSION_CODES.M)
     fun requestPermissions(permissions: Array<out String>) {
         liveData = MutableLiveData()
-        requestPermissions(permissions, PERMISSIONS_REQUEST_CODE)
+        val tempPermission = ArrayList<String>()
+        permissions.forEach {
+            if (activity?.checkSelfPermission(it) != PackageManager.PERMISSION_GRANTED) {
+                tempPermission.add(it)
+            }
+        }
+        if (tempPermission.isEmpty()) {
+            liveData.value = PermissionResult.Grant
+        } else {
+            requestPermissions(tempPermission.toTypedArray(), PERMISSIONS_REQUEST_CODE)
+        }
     }
 
 
