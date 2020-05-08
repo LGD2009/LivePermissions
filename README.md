@@ -8,7 +8,7 @@
 ### 1.添加依赖
 
 ```
-implementation 'com.ftd.livepermissions:livepermissions:1.0.1'
+implementation 'com.ftd.livepermissions:livepermissions:1.0.2'
 ```
 ### 2.添加代码
 
