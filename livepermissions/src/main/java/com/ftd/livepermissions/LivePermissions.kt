@@ -3,7 +3,7 @@ package com.ftd.livepermissions
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
 
 /**
  * author GaoPC
@@ -35,11 +35,11 @@ class LivePermissions {
             } else fragmentManager.findFragmentByTag(TAG) as LiveFragment
         }
 
-    fun request(vararg permissions: String): MutableLiveData<PermissionResult> {
+    fun request(vararg permissions: String): LiveData<PermissionResult> {
         return this.requestArray(permissions)
     }
 
-    fun requestArray(permissions: Array<out String>): MutableLiveData<PermissionResult> {
+    fun requestArray(permissions: Array<out String>): LiveData<PermissionResult> {
         liveFragment!!.requestPermissions(permissions)
         return liveFragment!!.liveData
     }
